@@ -1,0 +1,30 @@
+body{
+    background-image: url("https://thectwc.com/wp-content/uploads/2015/08/tetrisbgdim.gif");
+} 
+footer{
+    background-color: #828282 ;
+    text-align: right;
+    padding-right: 30px;
+}
+aside{
+    margin: 35px;
+}
+.card-deck{
+    margin: 35px;
+}
+.card-img{
+    height: 120px;
+    width: 140px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+
+.jumbotron {
+    margin: 0;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+

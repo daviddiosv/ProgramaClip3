@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Minijuego Adivinanza</title>
+
+    <script>
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="jumbotron text-center p-1">
+            <h1>Adivinanza - Mundo Tetris!</h1>
+            <p>Una consigna sencilla!</p>
+        </div>
+        <br><br>
+
+        <form action="" onsubmit="return validar();" id="form">
+            <div class="form-group">
+                <label for="consigna" style="color: white;">Cuantas piezas distintas tiene el Tetris clásico?</label>
+                <input type="text" class="form-control" id="numero" placeholder="Respuesta" name="numero">
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+              <label for="intentos" id="intentos" style="color: white;"></label>
+            </form>
+        </form>
+
+    </div>
+    <script src="cositas.js"></script>
+</body>
+
+</html>
