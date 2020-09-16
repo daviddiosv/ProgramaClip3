@@ -1,36 +1,53 @@
+//si no lo pongo fuera de la función se va a settear siempre en 0
+var intent = 0;
 function validar() {
-    var numero;
-    var intent = 0;
+    event.preventDefault();
+
+    var respuesta;
     var expresion = /[0-9]/g;
 
-    numero = document.getElementById("numero").value;
+    respuesta = document.getElementById("respuesta").value;
 
-    if (numero === "") {
+    //validacion del contenido ingresado por el input
+    if (respuesta === "") {
         alert("El campo está vacío");
         document.getElementById('intentos').innerHTML = "Intentos:" + intent;
-        return false;
     }
-    else if (!expresion.test(numero)) {
+    else if (!expresion.test(respuesta)) {
         alert("El número no es válido");
         document.getElementById('intentos').innerHTML = "Intentos:" + intent;
-        return false;
-    }
-    else {
-        for (i=0; i<3;i++)
+    }else 
+    //adivinanza
+    if(intent<4)
+    {
+        intent++;
+        if(respuesta==7)
         {
-            if (numero != 7) {
-                intent++;
-                console.log(i);
-                alert("Buen intento, pero no es ese el número");
-                document.getElementById('intentos').innerHTML = ("Intentos:") + intent;
-                return false;
+            document.getElementById('correccion').innerHTML = "La respuesta es correcta!";
+            document.getElementById('intentos').innerHTML = "Intentos:" + intent;
+            document.getElementById('pistas').innerHTML = "";
+            document.getElementById('respuesta').innerHTML = "";
+            document.getElementById('respuesta').disabled = true;
+            document.getElementById('boton').disabled = true;
+        }
+        else
+        {
+            document.getElementById('correccion').innerHTML = "Buen intento pero no es correcto";
+            document.getElementById('intentos').innerHTML = "Intentos:" + intent;
+            document.getElementById('respuesta').value= "";
+            if(intent==2)
+            {
+                document.getElementById('pistas').innerHTML = "Es un número de un dígito";
             }
-            else {
-                ++intent;
-                alert("ACERTASTE SON 7 LAS PIEZAS DEL TETRIS CLÁSICO");
-                document.getElementById('intentos').innerHTML = ("Intentos:") + intent;
-                return false;
+            else if (intent ==3)
+            {
+                document.getElementById('pistas').innerHTML = "Última pista, es un número primo";
             }
         }
+    }else
+    {
+        document.getElementById('correccion').innerHTML = "Te quedaste sin intentos";
+        document.getElementById('respuesta').disabled = true;
+        document.getElementById('boton').disabled = true;
     }
 }
